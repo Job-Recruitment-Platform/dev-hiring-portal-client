@@ -18,7 +18,7 @@ export default function SearchBar() {
             </div>
             <Button className='flex items-center gap-x-2'>
                <SearchIcon /> Tìm kiếm
-            </Button>
+            </Button>   
          </div>
       </div>
    )
