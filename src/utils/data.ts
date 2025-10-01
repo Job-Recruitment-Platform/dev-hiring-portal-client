@@ -1,4 +1,4 @@
-import type { JobType } from '@/types/job.type'
+import type { JobType, MajorType } from '@/types/job.type'
 
 const mockJob: JobType = {
    id: 1,
@@ -13,3 +13,12 @@ const mockJob: JobType = {
 export const mockJobList: JobType[] = Array(9)
    .fill(mockJob)
    .map((job, index) => ({ ...job, id: index + 1 }))
+
+export const mockMajorList: MajorType[] = [
+   { id: 1, name: 'Công nghệ thông tin' },
+   { id: 2, name: 'Kinh tế' },
+   { id: 3, name: 'Tài chính - Ngân hàng' },
+   { id: 4, name: 'Marketing' },
+   { id: 5, name: 'Xây dựng' },
+   { id: 6, name: 'Lao động phổ thông' }
+]

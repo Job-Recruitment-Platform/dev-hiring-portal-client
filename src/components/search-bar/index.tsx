@@ -17,8 +17,8 @@ export default function SearchBar() {
                <Location />
             </div>
             <Button className='flex items-center gap-x-2'>
-               <SearchIcon /> Tìm kiếm
-            </Button>   
+               <SearchIcon size={16} /> Tìm kiếm
+            </Button>
          </div>
       </div>
    )

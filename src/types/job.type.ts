@@ -6,3 +6,8 @@ export type JobType = {
    location: string
    salary: string
 }
+
+export type MajorType = {
+   id: number
+   name: string
+}
