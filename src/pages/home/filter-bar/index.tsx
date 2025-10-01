@@ -10,7 +10,7 @@ const FILTER_OPTIONS = [
 ]
 
 const LOCATION_OPTIONS = [
-   { label: 'Ngẫu Nhiên', value: 'random' },      
+   { label: 'Ngẫu Nhiên', value: 'random' },
    { label: 'Hồ Chí Minh', value: 'hcm' },
    { label: 'Hà Nội', value: 'hn' },
    { label: 'Miền Bắc', value: 'dn' },
@@ -22,10 +22,10 @@ type FilterBarProps = {
 }
 
 export default function FilterBar({ className }: FilterBarProps) {
-   const [filterBy, setFilterBy] = useState<{ label: string; value: string }>(FILTER_OPTIONS[0])
+   const [filterBy] = useState<{ label: string; value: string }>(FILTER_OPTIONS[0])
 
    return (
-      <div className={`flex w-full items-center  justify-between ${className}`}>
+      <div className={`flex w-full items-center justify-between ${className}`}>
          <div className='flex w-[16rem] items-center rounded-md border bg-white p-2.5'>
             <div className='flex items-center gap-x-2 text-sm font-semibold text-[#a6acb2]'>
                <ListFilter size={16} /> Lọc theo:
@@ -37,7 +37,13 @@ export default function FilterBar({ className }: FilterBarProps) {
          </div>
          <div className='flex gap-x-1'>
             {LOCATION_OPTIONS.map((option) => (
-               <Button variant='ghost' className='!font-[500] !text-sm !text-black/80' key={option.value}>{option.label}</Button>
+               <Button
+                  variant='ghost'
+                  className='!text-sm !font-[500] !text-black/80'
+                  key={option.value}
+               >
+                  {option.label}
+               </Button>
             ))}
          </div>
       </div>

@@ -11,7 +11,7 @@ export default function BannerCategory({ onSelect }: BannerCategoryProps) {
          {mockMajorList.map((major) => (
             <div
                key={major.id}
-               className='flex cursor-pointer py-1.5 font-semibold hover:text-[#00b14f]'
+               className='flex cursor-pointer text-sm py-1.5 font-semibold hover:text-[#00b14f]'
                onMouseEnter={() => onSelect(major.id)}
             >
                <div className='flex-1'>{major.name}</div>

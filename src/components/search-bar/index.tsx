@@ -1,14 +1,14 @@
 import Button from '@/components/button/Button'
 import { SearchIcon } from 'lucide-react'
-import Location from './Location'
+import Location from './location/Location'
 
 export default function SearchBar() {
    return (
-      <div className='flex w-[60%] items-center rounded-full bg-white p-3 !pl-4'>
+      <div className='flex w-[60%] items-center rounded-full bg-white px-3 py-2 !pl-4'>
          <div className='flex-1'>
             <input
                type='text'
-               className='w-full focus:outline-none'
+               className='w-full focus:outline-none text-sm'
                placeholder='Vị trí tuyển dụng, tên công ty'
             />
          </div>

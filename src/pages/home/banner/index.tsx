@@ -23,7 +23,7 @@ export default function Banner() {
             Việt Nam
          </div>
          <SearchBar />
-         <div className='grid w-[60%] grid-cols-4 grid-rows-[273px] gap-x-3'>
+         <div className='mt-3.5 grid w-[60%] grid-cols-4 grid-rows-[273px] gap-x-3'>
             <div className='col-span-1 rounded-lg bg-white'>
                <div className='grid h-full w-full grid-rows-7'>
                   <div className='row-span-6 p-3.5' onMouseLeave={() => setIsDefaultBanner(true)}>
