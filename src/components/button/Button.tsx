@@ -2,14 +2,15 @@ import clsx from 'clsx'
 
 const variantStyles = {
    primary: 'bg-[#00b14f] text-white hover:brightness-105',
-   ghost: 'bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-100'
+   secondary: 'bg-white border border-[#00b14f] text-[#00b14f]',
+   ghost: 'bg-gray-200/60   hover:bg-gray-300/70'
 }
 
 type ButtonProps = {
    children: React.ReactNode
    onClick?: () => void
    className?: string
-   variant?: 'primary' | 'ghost'
+   variant?: 'primary' | 'ghost' | 'secondary'
 }
 
 export default function Button({ children, onClick, className, variant = 'primary' }: ButtonProps) {

@@ -119,8 +119,4 @@
    }
 }
 
-@utility  {
-   .flex-items-center {
-      @apply flex items-center;
-   }
-}
+   

@@ -1,4 +1,6 @@
 import FilterBar from '@/pages/home/filter-bar'
+import JobList from '@/pages/home/job-list'
+import { mockJobList } from '@/utils/data'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Banner from './banner'
 
@@ -9,7 +11,7 @@ export default function Home() {
          <div className='flex w-full justify-center bg-[#f3f5f7] py-4'>
             <div className='w-[60%]'>
                {/*  Recommend Title  */}
-               <div className='flex items-center justify-between py-2'>
+               <div className='flex items-center justify-between my-1'>
                   <div className='flex items-center gap-x-3'>
                      <div className='!text-[24px] font-bold text-[#00b14f]'>Việc làm tốt nhất</div>
                      <div className='h-[1.5rem] w-[1px] bg-gray-300'></div>
@@ -32,7 +34,9 @@ export default function Home() {
                   </div>
                </div>
                {/*  FilterBar  */}
-               <FilterBar />
+               <FilterBar className='my-4'/>
+               {/*  JobList  */}
+               <JobList joblist={mockJobList} />
             </div>
          </div>
       </div>
