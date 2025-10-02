@@ -17,7 +17,7 @@ export default function SearchBar({ className }: SearchBarProps) {
                <SearchLocation />
             </div>
             <div className='col-span-2 flex'>
-               <Button variant='primary' className='w-full !text-sm !py-1 !font-bold !rounded-md'>
+               <Button variant='primary' className='w-full !rounded-md !py-1 !text-sm !font-bold'>
                   Tìm kiếm
                </Button>
             </div>

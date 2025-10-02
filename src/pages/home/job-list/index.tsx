@@ -10,7 +10,7 @@ export default function JobList({ joblist, className }: JobListProps) {
    return (
       <section className={`grid w-full grid-cols-3 gap-3 ${className}`}>
          {joblist.map((job) => (
-            <div key={job.id} className='col-span-1'> 
+            <div key={job.id} className='col-span-1'>
                <JobCard job={job} />
             </div>
          ))}

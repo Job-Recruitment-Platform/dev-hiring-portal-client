@@ -8,7 +8,7 @@ type JobCardProps = {
 
 export default function JobCard({ job }: JobCardProps) {
    return (
-      <div className='grid w-full grid-cols-[64px_1fr] gap-y-1 gap-x-2 rounded-xl border border-white bg-white p-3 hover:border-[#00b14f]'>
+      <div className='grid w-full grid-cols-[64px_1fr] gap-x-2 gap-y-1 rounded-xl border border-white bg-white p-3 hover:border-[#00b14f]'>
          <div className='col-span-1 h-[64px] w-[64px] rounded-lg border p-1'>
             <img src={job.avatar} alt={job.company} className='h-full w-full object-cover' />
          </div>
