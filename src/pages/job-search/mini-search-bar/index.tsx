@@ -21,7 +21,7 @@ export default function MiniSearchBar() {
             <div className='pr-2 font-semibold text-black/70'>Tìm kiếm theo: </div>
             <JobFilter options={JOB_FILTER_OPTIONS} />
          </div>
-         <div className='flex items-center gap-x-2 border-l border-gray-200 pl-2'>
+         <div className='flex items-center gap-x-2 border-l border-gray-300 pl-2'>
             <div className='font-semibold text-black/80'>Ưu tiên hiển thị theo:</div>
             <ShowPriority options={SHOW_PRIORITY_OPTIONS} />
          </div>
