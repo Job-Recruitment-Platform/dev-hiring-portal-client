@@ -9,7 +9,7 @@ export default function JobSearch() {
       <>
          <SearchBar />
          <div className='flex w-full justify-center bg-[#f3f5f7] pt-5'>
-            <div className='grid w-[1170px] grid-cols-11 gap-x-1'>
+            <div className='grid w-[1170px] grid-cols-11 gap-x-7'>
                <div className='col-span-3'>
                   <JobFilterBar />
                </div>
