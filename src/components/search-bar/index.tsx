@@ -1,6 +1,6 @@
 import Button from '@/components/button/Button'
 import { SearchIcon } from 'lucide-react'
-import Location from './search-location'
+import SearchLocation from '../search-location'
 
 export default function SearchBar() {
    return (
@@ -14,7 +14,7 @@ export default function SearchBar() {
          </div>
          <div className='flex items-center gap-x-3'>
             <div className='border-x border-gray-200 px-2'>
-               <Location />
+               <SearchLocation />
             </div>
             <Button className='flex items-center gap-x-2'>
                <SearchIcon size={16} /> Tìm kiếm

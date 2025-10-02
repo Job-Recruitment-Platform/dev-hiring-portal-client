@@ -1,11 +1,15 @@
 import Button from '@/components/button/Button'
-import LocationSelection from '@/components/search-bar/search-location/LocationSelection'
+import LocationSelection from '@/components/search-location/LocationSelection'
 import { ChevronDown, MapPin } from 'lucide-react'
 
-export default function SearchLocation() {
+type SearchLocationProps = {
+   className?: string
+}
+
+export default function SearchLocation({ className }: SearchLocationProps) {
    return (
       <LocationSelection className='!mt-3 rounded-2xl !py-2'>
-         <Button variant='ghost' className='!text-black/80'>
+         <Button variant='ghost' className={`!text-black/80 ${className}`}>
             <div className='flex items-center gap-x-1'>
                <MapPin size={16} />
                <span className='text-sm'>Địa điểm</span>
