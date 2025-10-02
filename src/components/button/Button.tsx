@@ -24,7 +24,7 @@ export default function Button({
    return (
       <button
          className={clsx(
-            `flex items-center gap-x-1 rounded-full px-4 py-2 text-[15px] font-semibold hover:cursor-pointer`,
+            `flex items-center justify-center gap-x-1 rounded-full px-4 py-2 text-[15px] font-semibold hover:cursor-pointer`,
             `${className}`,
             `${variantStyles[variant]}`,
             `${disabled && '!cursor-not-allowed !border-gray-400 !text-gray-400'}`

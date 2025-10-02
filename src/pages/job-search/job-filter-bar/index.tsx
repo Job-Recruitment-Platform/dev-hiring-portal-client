@@ -1,3 +1,4 @@
+import SalaryInput from '@/components/input/SalaryInput'
 import BasicFilterOption from '@/pages/job-search/job-filter-bar/BasicFilterOption'
 import { mockExperienceOptions } from '@/utils/data'
 import { FilterIcon } from 'lucide-react'
@@ -26,8 +27,9 @@ export default function JobFilterBar() {
                label='Kinh nghiệm'
                columns={2}
                options={mockExperienceOptions}
-               className='py-2.5 border-y border-dashed'
+               className='border-y border-dashed py-2.5'
             />
+            <SalaryInput className='py-2.5'/>
          </div>
       </div>
    )
