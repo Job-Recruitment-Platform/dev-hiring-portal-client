@@ -9,7 +9,7 @@ type ShowPriorityProps = {
 }
 
 export default function ShowPriority({ options, defaultOption }: ShowPriorityProps) {
-   const [selectedOption, setSelectedOption] = useState<OptionType>(defaultOption || options[0])
+   const [selectedOption] = useState<OptionType>(defaultOption || options[0])
 
    return (
       <Popover>

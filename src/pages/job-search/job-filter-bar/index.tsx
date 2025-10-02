@@ -1,3 +1,5 @@
+import BasicFilterOption from '@/pages/job-search/job-filter-bar/BasicFilterOption'
+import { mockExperienceOptions } from '@/utils/data'
 import { FilterIcon } from 'lucide-react'
 
 export default function JobFilterBar() {
@@ -8,6 +10,24 @@ export default function JobFilterBar() {
             <span className='text-lg font-bold text-black/70'>Lọc nâng cao</span>
          </div>
          <div className='max-h-[2/3vh]'>
+            <BasicFilterOption
+               label='Kinh nghiệm'
+               columns={2}
+               options={mockExperienceOptions}
+               className='border-y border-dashed py-2.5'
+            />
+            <BasicFilterOption
+               label='Kinh nghiệm'
+               columns={2}
+               options={mockExperienceOptions}
+               className='py-2.5'
+            />
+            <BasicFilterOption
+               label='Kinh nghiệm'
+               columns={2}
+               options={mockExperienceOptions}
+               className='py-2.5 border-y border-dashed'
+            />
          </div>
       </div>
    )

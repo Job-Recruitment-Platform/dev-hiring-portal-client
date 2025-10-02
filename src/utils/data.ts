@@ -96,3 +96,15 @@ export const mockProvinces: ProvinceType[] = Array(20)
          'st'
       ][index]
    }))
+
+export const mockExperienceOptions = [
+   { label: 'Tất cả', value: 'all' },
+   { label: 'Dưới 1 Năm', value: '-1' },
+   { label: '1 Năm', value: '1' },
+   { label: '2 Năm', value: '2' },
+   { label: '3 Năm', value: '3' },
+   { label: '4 Năm', value: '4' },
+   { label: '5 Năm', value: '5' },
+   { label: 'Trên 5 Năm', value: '6' },
+   { label: 'Không yêu cầu', value: 'none' }
+]
