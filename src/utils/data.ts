@@ -1,4 +1,5 @@
 import type { JobType, MajorType } from '@/types/job.type'
+import type { ProvinceType } from '@/types/province.type'
 
 const mockJob: JobType = {
    id: 1,
@@ -44,5 +45,54 @@ export const mockMajorList: MajorType[] = Array(25)
          'Hóa học',
          'Môi trường',
          'An ninh'
+      ][index]
+   }))
+
+export const mockProvinces: ProvinceType[] = Array(20)
+   .fill(null)
+   .map((_, index) => ({
+      label: [
+         'Hồ Chí Minh',
+         'Hà Nội',
+         'Đà Nẵng',
+         'Cần Thơ',
+         'Nha Trang',
+         'Hải Phòng',
+         'Biên Hòa',
+         'Bắc Ninh',
+         'Thái Nguyên',
+         'Nam Định',
+         'Vũng Tàu',
+         'Huế',
+         'Quy Nhon',
+         'Buôn Ma Thuột',
+         'Phan Thiết',
+         'Vinh',
+         'Hạ Long',
+         'Cà Mau',
+         'Kon Tum',
+         'Sóc Trăng'
+      ][index],
+      value: [
+         'hcm',
+         'hn',
+         'dn',
+         'ct',
+         'nt',
+         'hp',
+         'bh',
+         'bn',
+         'tn',
+         'nd',
+         'vt',
+         'hue',
+         'qn',
+         'bmt',
+         'pt',
+         'vinh',
+         'hl',
+         'cm',
+         'kt',
+         'st'
       ][index]
    }))

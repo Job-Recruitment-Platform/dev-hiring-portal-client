@@ -4,7 +4,7 @@ import { ChevronDown, MapPin } from 'lucide-react'
 
 export default function Location() {
    return (
-      <LocationSelection className='!mt-3 !py-2'>
+      <LocationSelection className='!mt-3 !py-2 rounded-2xl'>
          <Button variant='ghost' className='!text-black/80'>
             <div className='flex items-center gap-x-1'>
                <MapPin size={16} />
