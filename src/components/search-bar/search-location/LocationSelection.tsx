@@ -1,5 +1,5 @@
-import SearchBar from '@/components/search-bar/location/SearchBar'
-import SearchItem from '@/components/search-bar/location/SearchItem'
+import SearchBar from '@/components/search-bar/search-location/SearchBar'
+import SearchItem from '@/components/search-bar/search-location/SearchItem'
 import { Popover, PopoverContent } from '@/components/ui/popover'
 import { mockProvinces } from '@/utils/data'
 import { PopoverTrigger } from '@radix-ui/react-popover'

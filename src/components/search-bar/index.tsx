@@ -1,6 +1,6 @@
 import Button from '@/components/button/Button'
 import { SearchIcon } from 'lucide-react'
-import Location from './location/Location'
+import Location from './search-location'
 
 export default function SearchBar() {
    return (
@@ -8,7 +8,7 @@ export default function SearchBar() {
          <div className='flex-1'>
             <input
                type='text'
-               className='w-full focus:outline-none text-sm'
+               className='w-full text-sm focus:outline-none'
                placeholder='Vị trí tuyển dụng, tên công ty'
             />
          </div>
