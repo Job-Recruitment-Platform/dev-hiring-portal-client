@@ -1,6 +1,6 @@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import type { OptionType } from '@/types/common.type'
-import { ChevronDownIcon } from 'lucide-react'
+import { CheckIcon, ChevronDownIcon } from 'lucide-react'
 import { useState } from 'react'
 
 type SelectionBoxProps = {
@@ -22,14 +22,21 @@ export default function SelectionBox({ className, options, defaultOption }: Sele
                <ChevronDownIcon size={16} />
             </button>
          </PopoverTrigger>
-         <PopoverContent className='w-[var(--radix-popover-trigger-width)] p-1.5'>
+         <PopoverContent className='w-[var(--radix-popover-trigger-width)] rounded-md p-0'>
             {options.map((option) => (
                <div
                   key={option.value}
-                  className='p-2 hover:cursor-pointer hover:bg-gray-100'
+                  className='flex items-center justify-between px-5 py-3 text-sm font-semibold hover:cursor-pointer hover:bg-gray-100'
                   onClick={() => setSelectedOption(option)}
                >
-                  {option.label}
+                  <div
+                     className={`${selectedOption?.value === option.value && 'text-[14px] font-semibold text-[#00b14f]'}`}
+                  >
+                     {option.label}
+                  </div>
+                  {selectedOption?.value === option.value && (
+                     <CheckIcon size={16} className='text-[#00b14f]' />
+                  )}
                </div>
             ))}
          </PopoverContent>
