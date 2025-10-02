@@ -25,7 +25,7 @@ export default function FilterBar({ className }: FilterBarProps) {
    const [filterBy] = useState<{ label: string; value: string }>(FILTER_OPTIONS[0])
 
    return (
-      <div className={`flex w-full items-center justify-between ${className}`}>
+      <section className={`flex w-full items-center justify-between ${className}`}>
          <div className='flex w-[16rem] items-center rounded-md border bg-white p-2.5'>
             <div className='flex items-center gap-x-2 text-sm font-semibold text-[#a6acb2]'>
                <ListFilter size={16} /> Lọc theo:
@@ -46,6 +46,6 @@ export default function FilterBar({ className }: FilterBarProps) {
                </Button>
             ))}
          </div>
-      </div>
+      </section>
    )
 }

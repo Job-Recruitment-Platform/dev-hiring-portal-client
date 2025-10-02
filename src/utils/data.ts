@@ -14,11 +14,35 @@ export const mockJobList: JobType[] = Array(9)
    .fill(mockJob)
    .map((job, index) => ({ ...job, id: index + 1 }))
 
-export const mockMajorList: MajorType[] = [
-   { id: 1, name: 'Công nghệ thông tin' },
-   { id: 2, name: 'Kinh tế' },
-   { id: 3, name: 'Tài chính - Ngân hàng' },
-   { id: 4, name: 'Marketing' },
-   { id: 5, name: 'Xây dựng' },
-   { id: 6, name: 'Lao động phổ thông' }
-]
+export const mockMajorList: MajorType[] = Array(25)
+   .fill(null)
+   .map((_, index) => ({
+      id: index + 1,
+      name: [
+         'Công nghệ thông tin',
+         'Kinh tế',
+         'Tài chính - Ngân hàng',
+         'Marketing',
+         'Xây dựng',
+         'Lao động phổ thông',
+         'Y tế',
+         'Giáo dục',
+         'Du lịch',
+         'Logistics',
+         'Nhân sự',
+         'Bán lẻ',
+         'Sản xuất',
+         'Bất động sản',
+         'Luật',
+         'Kế toán',
+         'Thiết kế',
+         'Truyền thông',
+         'Nông nghiệp',
+         'Dịch vụ khách hàng',
+         'Điện tử',
+         'Cơ khí',
+         'Hóa học',
+         'Môi trường',
+         'An ninh'
+      ][index]
+   }))

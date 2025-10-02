@@ -10,18 +10,27 @@ type ButtonProps = {
    children: React.ReactNode
    onClick?: () => void
    className?: string
+   disabled?: boolean
    variant?: 'primary' | 'ghost' | 'secondary'
 }
 
-export default function Button({ children, onClick, className, variant = 'primary' }: ButtonProps) {
+export default function Button({
+   children,
+   onClick,
+   className,
+   variant = 'primary',
+   disabled
+}: ButtonProps) {
    return (
       <button
          className={clsx(
             `flex items-center gap-x-1 rounded-full px-4 py-2 text-[15px] font-semibold hover:cursor-pointer`,
             `${className}`,
-            `${variantStyles[variant]}`
+            `${variantStyles[variant]}`,
+            `${disabled && '!cursor-not-allowed !border-gray-400 !text-gray-400'}`
          )}
          onClick={onClick}
+         disabled={disabled}
       >
          {children}
       </button>

@@ -1,12 +1,20 @@
 import SearchBar from '@/components/search-bar'
+import { useClientPagination } from '@/hooks/useClientPagination'
 import BannerCategory from '@/pages/home/banner/BannerCategory'
 import BannerCategoryOption from '@/pages/home/banner/BannerCategoryOption'
 import BannerPagination from '@/pages/home/banner/BannerPagination'
+import { mockMajorList } from '@/utils/data'
 import { useState } from 'react'
 
 export default function Banner() {
    const [isDefaultBanner, setIsDefaultBanner] = useState(true)
    const [selectedMajorId] = useState<number | null>(null)
+   const { next, prev, currentPage, totalPages, hasNext, hasPrev, pagedData } = useClientPagination(
+      {
+         data: mockMajorList,
+         initialPageSize: 5
+      }
+   )
 
    const handleSelectMajor = (majorId: number) => {
       setIsDefaultBanner(false)
@@ -27,10 +35,17 @@ export default function Banner() {
             <div className='col-span-1 rounded-lg bg-white'>
                <div className='grid h-full w-full grid-rows-7'>
                   <div className='row-span-6 p-3.5' onMouseLeave={() => setIsDefaultBanner(true)}>
-                     <BannerCategory onSelect={handleSelectMajor} />
+                     <BannerCategory onSelect={handleSelectMajor} categories={pagedData} />
                   </div>
                   <div className='row-span-1 flex items-center border-t p-3.5'>
-                     <BannerPagination />
+                     <BannerPagination
+                        hasNext={hasNext}
+                        hasPrev={hasPrev}
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onNext={next}
+                        onPrev={prev}
+                     />
                   </div>
                </div>
             </div>

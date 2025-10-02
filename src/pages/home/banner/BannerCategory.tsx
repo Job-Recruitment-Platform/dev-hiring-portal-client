@@ -1,17 +1,18 @@
-import { mockMajorList } from '@/utils/data'
+import type { MajorType } from '@/types/job.type'
 import { ChevronRight } from 'lucide-react'
 
 type BannerCategoryProps = {
+   categories: MajorType[]
    onSelect: (majorId: number) => void
 }
 
-export default function BannerCategory({ onSelect }: BannerCategoryProps) {
+export default function BannerCategory({ onSelect, categories }: BannerCategoryProps) {
    return (
       <div className='h-full w-full'>
-         {mockMajorList.map((major) => (
+         {categories.map((major) => (
             <div
                key={major.id}
-               className='flex cursor-pointer text-sm py-1.5 font-semibold hover:text-[#00b14f]'
+               className='flex cursor-pointer py-2 text-sm font-semibold hover:text-[#00b14f]'
                onMouseEnter={() => onSelect(major.id)}
             >
                <div className='flex-1'>{major.name}</div>
