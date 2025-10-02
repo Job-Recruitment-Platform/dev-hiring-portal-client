@@ -14,7 +14,7 @@ export default function SelectionBox({ className, options, defaultOption }: Sele
 
    return (
       <Popover>
-         <PopoverTrigger>
+         <PopoverTrigger asChild>
             <button
                className={`flex items-center justify-between border-white bg-white px-3 py-1.5 hover:border-[#00b14f] ${className}`}
             >
@@ -22,7 +22,7 @@ export default function SelectionBox({ className, options, defaultOption }: Sele
                <ChevronDownIcon size={16} />
             </button>
          </PopoverTrigger>
-         <PopoverContent className='p-1.5'>
+         <PopoverContent className='w-[var(--radix-popover-trigger-width)] p-1.5'>
             {options.map((option) => (
                <div
                   key={option.value}
