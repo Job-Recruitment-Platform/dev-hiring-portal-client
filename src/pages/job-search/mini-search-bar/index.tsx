@@ -1,5 +1,5 @@
+import SelectionBox from '@/components/selection-box'
 import JobFilter from '@/pages/job-search/mini-search-bar/JobFilter'
-import ShowPriority from '@/pages/job-search/mini-search-bar/ShowPriority'
 import type { OptionType } from '@/types/common.type'
 
 const JOB_FILTER_OPTIONS: OptionType[] = [
@@ -16,14 +16,17 @@ const SHOW_PRIORITY_OPTIONS: OptionType[] = [
 
 export default function MiniSearchBar() {
    return (
-      <div className='flex items-center gap-x-3 p-2 !text-[14px]'>
+      <div className='flex items-center gap-x-5 py-2 !text-[14px]'>
          <div className='flex items-center'>
             <div className='pr-2 font-semibold text-black/70'>Tìm kiếm theo: </div>
             <JobFilter options={JOB_FILTER_OPTIONS} />
          </div>
-         <div className='flex items-center gap-x-2 border-l border-gray-300 pl-2'>
+         <div className='flex flex-1 items-center gap-x-2 border-l border-gray-300 pl-4'>
             <div className='font-semibold text-black/80'>Ưu tiên hiển thị theo:</div>
-            <ShowPriority options={SHOW_PRIORITY_OPTIONS} />
+            <SelectionBox
+               options={SHOW_PRIORITY_OPTIONS}
+               className='flex-1 rounded-full text-black/80'
+            />
          </div>
       </div>
    )

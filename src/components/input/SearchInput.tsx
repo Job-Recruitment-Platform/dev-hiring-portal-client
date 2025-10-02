@@ -1,3 +1,5 @@
+import { SearchIcon } from 'lucide-react'
+
 type SearchInputProps = {
    searchBarClassName?: string
    inputSearchClassName?: string
@@ -10,10 +12,11 @@ export default function SearchInput({
    placeholder
 }: SearchInputProps) {
    return (
-      <div className={`w-full border border-[#0016] px-2 py-1.5 ${searchBarClassName}`}>
+      <div className={`flex w-full items-center px-3 py-1 ${searchBarClassName}`}>
+         <SearchIcon size={16} className='mr-2 text-gray-400' />
          <input
             type='text'
-            className={`text-sm ${inputSearchClassName}`}
+            className={`text-sm ${inputSearchClassName} w-full focus:outline-none`}
             placeholder={placeholder}
          />
       </div>
