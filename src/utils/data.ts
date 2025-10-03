@@ -121,7 +121,8 @@ export const mockJobDetail = {
    companyInfo: {
       id: 55,
       name: 'TechnoViet Solutions',
-      avatar: 'https://example.com/company-logo.png',
+      avatar:
+         'https://cdn-new.topcv.vn/unsafe/80x/https://static.topcv.vn/company_logos/iapF9tkJsNkT2P7Ueh5W6wtD2cTDGhOn_1740976025____9e13fe8a47b501c550633e9adebf8aaa.jpg',
       scale: '201-500',
       industry: 'Information Technology',
       address: 'Tầng 12, Tòa Keangnam Landmark, Nam Từ Liêm, Hà Nội'
