@@ -108,3 +108,32 @@ export const mockExperienceOptions = [
    { label: 'Trên 5 Năm', value: '6' },
    { label: 'Không yêu cầu', value: 'none' }
 ]
+
+export const mockJobDetail = {
+   jobInfo: {
+      id: 101,
+      title: 'Junior Java Backend Developer',
+      salary: '15 - 25 triệu',
+      location: 'Hà Nội',
+      experience: '1 Năm',
+      deadline: '2025-10-31T23:59:59.000Z'
+   },
+   companyInfo: {
+      id: 55,
+      name: 'TechnoViet Solutions',
+      avatar: 'https://example.com/company-logo.png',
+      scale: '201-500',
+      industry: 'Information Technology',
+      address: 'Tầng 12, Tòa Keangnam Landmark, Nam Từ Liêm, Hà Nội'
+   },
+   jobDescription: {
+      description:
+         'Phát triển và duy trì hệ thống backend cho các ứng dụng thương mại điện tử quy mô lớn. Tham gia review code, tối ưu hiệu năng hệ thống.',
+      requirement:
+         'Có kiến thức cơ bản về Java, Spring Boot, SQL. Hiểu biết về REST API. Ưu tiên có kinh nghiệm với Docker và Kafka.',
+      benefit:
+         'Mức lương cạnh tranh, thưởng theo dự án. Bảo hiểm full lương. Cơ hội đào tạo và thăng tiến.',
+      address: 'Làm việc tại trụ sở công ty, Hà Nội',
+      workingTime: 'Thứ 2 - Thứ 6, 9h00 - 18h00'
+   }
+}

@@ -9,7 +9,7 @@ type SearchBarProps = {
 
 export default function SearchBar({ className }: SearchBarProps) {
    return (
-      <section className={`flex justify-center bg-[#19734e] py-2 ${className}`}>
+      <section className={`flex justify-center bg-[#19734e] py-4.5 ${className}`}>
          <div className='grid w-[1170px] grid-cols-16 gap-x-2 px-1'>
             <div className='col-span-14 flex items-center rounded-md bg-white py-1'>
                <JobCategory />
