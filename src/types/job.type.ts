@@ -16,6 +16,7 @@ export type JobDetailType = {
    jobInfo: JobBasicInfoType
    companyInfo: CompanyInfoType
    jobDescription: JobDescriptionType
+   jobCommonInfo: JobCommonInfoType
 }
 
 export type JobBasicInfoType = {
@@ -42,4 +43,11 @@ export type JobDescriptionType = {
    benefit: string
    address: string
    workingTime: string
+}
+
+export type JobCommonInfoType = {
+   level: string
+   education: string
+   numberOfRecruit: number
+   employmentType: string
 }

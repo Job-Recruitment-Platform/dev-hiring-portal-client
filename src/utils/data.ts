@@ -136,5 +136,11 @@ export const mockJobDetail = {
          'Mức lương cạnh tranh, thưởng theo dự án. Bảo hiểm full lương. Cơ hội đào tạo và thăng tiến.',
       address: 'Làm việc tại trụ sở công ty, Hà Nội',
       workingTime: 'Thứ 2 - Thứ 6, 9h00 - 18h00'
+   },
+   jobCommonInfo: {
+      level: 'Nhân viên',
+      education: 'Đại học',
+      numberOfRecruit: 3,
+      employmentType: 'Toàn thời gian'
    }
 }
