@@ -27,13 +27,24 @@ export default function JobInfo({ jobInfo }: JobInfoProps) {
          {/*  Basic Info  */}
          <div className='grid grid-cols-3'>
             <div className='col-span-1'>
-               <BasicInfoBox label='Mức lương' value={jobInfo.salary} icon={CircleDollarSignIcon} />
-            </div>
-            <div className='col-span-1'>
-               <BasicInfoBox label='Địa điểm' value={jobInfo.location} icon={MapPinIcon} />
+               <BasicInfoBox
+                  type='secondary'
+                  label='Mức lương'
+                  value={jobInfo.salary}
+                  icon={CircleDollarSignIcon}
+               />
             </div>
             <div className='col-span-1'>
                <BasicInfoBox
+                  type='secondary'
+                  label='Địa điểm'
+                  value={jobInfo.location}
+                  icon={MapPinIcon}
+               />
+            </div>
+            <div className='col-span-1'>
+               <BasicInfoBox
+                  type='secondary'
                   label='Kinh nghiệm'
                   value={jobInfo.experience.toString()}
                   icon={ClockIcon}
