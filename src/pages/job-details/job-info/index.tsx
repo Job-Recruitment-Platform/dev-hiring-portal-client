@@ -52,7 +52,7 @@ export default function JobInfo({ jobInfo }: JobInfoProps) {
                <div>Ứng tuyển ngay</div>
             </Button>
             <Button variant='outline' className='!px-7'>
-               <HeartIcon size={16} strokeWidth={2.5} color='#00b14f'/>
+               <HeartIcon size={16} strokeWidth={2.5} color='#00b14f' />
                <div>Lưu tin</div>
             </Button>
          </div>
