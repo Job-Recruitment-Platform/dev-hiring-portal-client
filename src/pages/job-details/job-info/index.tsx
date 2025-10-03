@@ -54,7 +54,7 @@ export default function JobInfo({ jobInfo }: JobInfoProps) {
          {/*  Deadline  */}
          <div className='flex w-fit items-center gap-x-2 rounded bg-gray-200 px-1 py-0.5 text-sm'>
             <ClockIcon size={16} strokeWidth={2} color='gray' />
-            <div>Hạn nộp hồ sơ: {jobInfo.deadline.toDateString()}</div>
+            <div>Hạn nộp hồ sơ: {jobInfo.deadline.toLocaleDateString('en-GB')}</div>
          </div>
          {/*  Apply Button  */}
          <div className='flex items-center gap-x-2'>
