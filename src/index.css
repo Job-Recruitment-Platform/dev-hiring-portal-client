@@ -121,4 +121,8 @@
    button {
       @apply cursor-pointer;
    }
+
+   h2 {
+      @apply text-[20px] font-semibold;
+   }
 }
