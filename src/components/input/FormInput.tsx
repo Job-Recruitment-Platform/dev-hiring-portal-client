@@ -1,5 +1,6 @@
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'
 import { Label } from '@/components/ui/label'
+import { forwardRef } from 'react'
 
 type FormInputProps = {
    label?: string
@@ -7,21 +8,35 @@ type FormInputProps = {
    type?: string
    leftIcon?: React.ReactNode
    rightIcons?: React.ReactNode
+   value?: string
+   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+   name?: string
 }
 
-export function FormInput({
-   label,
-   placeholder,
-   type = 'text',
-   leftIcon,
-   rightIcons
-}: FormInputProps) {
-   return (
-      <InputGroup className='!h-auto rounded-none py-0.5 pr-2 !border-gray-250'>
-         <Label>{label}</Label>
-         <InputGroupInput className='!px-5' type={type} placeholder={placeholder} />
-         {leftIcon && <InputGroupAddon>{leftIcon}</InputGroupAddon>}
-         {rightIcons && <InputGroupAddon align='inline-end'>{rightIcons}</InputGroupAddon>}
-      </InputGroup>
-   )
-}
+export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
+   (
+      { label, placeholder, type = 'text', leftIcon, rightIcons, value, onChange, onBlur, name },
+      ref
+   ) => {
+      return (
+         <InputGroup className='!border-gray-250 !h-auto rounded-none py-0.5 pr-2'>
+            <Label>{label}</Label>
+            <InputGroupInput
+               ref={ref}
+               className='!px-5'
+               type={type}
+               placeholder={placeholder}
+               value={value}
+               onChange={onChange}
+               onBlur={onBlur}
+               name={name}
+            />
+            {leftIcon && <InputGroupAddon>{leftIcon}</InputGroupAddon>}
+            {rightIcons && <InputGroupAddon align='inline-end'>{rightIcons}</InputGroupAddon>}
+         </InputGroup>
+      )
+   }
+)
+
+FormInput.displayName = 'FormInput'

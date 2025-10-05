@@ -1,20 +1,42 @@
 import Button from '@/components/button/Button'
 import FilledIcons from '@/components/filled-icon'
 import { FormInput } from '@/components/input/FormInput'
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
+import {
+   Form,
+   FormControl,
+   FormField,
+   FormItem,
+   FormLabel,
+   FormMessage
+} from '@/components/ui/form'
+import type { LoginType } from '@/types/auth.type'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { MailIcon, ShieldIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+const loginSchema = z.object({
+   email: z.string().email('Email không hợp lệ').min(1, 'Email là bắt buộc'),
+   password: z.string().min(6, 'Mật khẩu phải có ít nhất 6 ký tự').min(1, 'Mật khẩu là bắt buộc')
+})
 
 export default function Login() {
-   const form = useForm()
+   const form = useForm<LoginType>({
+      resolver: zodResolver(loginSchema),
+      defaultValues: {
+         email: '',
+         password: ''
+      }
+   })
+
+   const onSubmit = (data: LoginType) => {
+      console.log('Thông tin đăng nhập:', data)
+   }
 
    return (
       <div className='w-full'>
          <Form {...form}>
-            <form
-               onSubmit={form.handleSubmit((data) => console.log(data))}
-               className='flex w-full flex-col gap-y-4'
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className='flex w-full flex-col gap-y-4'>
                <FormField
                   control={form.control}
                   name='email'
@@ -23,11 +45,13 @@ export default function Login() {
                         <FormLabel className='font-normal text-gray-800/90'>Email</FormLabel>
                         <FormControl>
                            <FormInput
+                              {...field}
                               placeholder='Email'
                               type='email'
                               leftIcon={<FilledIcons icon={MailIcon} fill='#00b14f' size={20} />}
                            />
                         </FormControl>
+                        <FormMessage />
                      </FormItem>
                   )}
                />
@@ -36,14 +60,16 @@ export default function Login() {
                   name='password'
                   render={({ field }) => (
                      <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Email</FormLabel>
+                        <FormLabel className='font-normal text-gray-800/90'>Mật khẩu</FormLabel>
                         <FormControl>
                            <FormInput
+                              {...field}
                               placeholder='Mật khẩu'
                               type='password'
                               leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
                            />
                         </FormControl>
+                        <FormMessage />
                      </FormItem>
                   )}
                />
@@ -53,23 +79,6 @@ export default function Login() {
                <Button variant='primary' className='w-full !rounded bg-[#00b14f] !py-2.5'>
                   Đăng nhập
                </Button>
-               <div className='w-full text-center text-sm font-normal text-gray-500'>
-                  Hoặc đăng nhập bằng
-               </div>
-               <div className='flex gap-x-3'>
-                  <Button variant='primary' className='flex-1 !py-2.5'>
-                     Google
-                  </Button>
-                  <Button variant='primary' className='flex-1 !py-2.5'>
-                     Facebook
-                  </Button>
-                  <Button variant='primary' className='flex-1 !py-2.5'>
-                     Linkedin
-                  </Button>
-               </div>
-               <span className='text-center text-sm'>
-                  Bạn chưa có tài khoản? <a className='font-normal text-[#00b14f]'>Đăng kí ngay</a>
-               </span>
             </form>
          </Form>
       </div>

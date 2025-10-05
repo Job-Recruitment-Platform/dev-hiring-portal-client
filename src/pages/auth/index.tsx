@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 export default function Auth() {
    return (
-      <div className='flex h-screen w-full justify-center p-30'>
+      <div className='flex h-screen w-full justify-center items-center'>
          <div className='w-[600px] space-y-1.5'>
             <h2 className='w-full text-[21px] text-[#00b14f]'>Chào mừng bạn đã quay trở lại</h2>
             <div className='text-sm text-gray-600'>
