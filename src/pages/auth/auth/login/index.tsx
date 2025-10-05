@@ -11,7 +11,8 @@ import {
 } from '@/components/ui/form'
 import type { LoginType } from '@/types/auth.type'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { MailIcon, ShieldIcon } from 'lucide-react'
+import { EyeIcon, EyeOffIcon, MailIcon, ShieldIcon } from 'lucide-react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -21,6 +22,8 @@ const loginSchema = z.object({
 })
 
 export default function Login() {
+   const [showPassword, setShowPassword] = useState(false)
+
    const form = useForm<LoginType>({
       resolver: zodResolver(loginSchema),
       defaultValues: {
@@ -32,6 +35,8 @@ export default function Login() {
    const onSubmit = (data: LoginType) => {
       console.log('Thông tin đăng nhập:', data)
    }
+
+   const togglePasswordVisibility = () => setShowPassword(!showPassword)
 
    return (
       <div className='w-full'>
@@ -65,8 +70,17 @@ export default function Login() {
                            <FormInput
                               {...field}
                               placeholder='Mật khẩu'
-                              type='password'
+                              type={showPassword ? 'text' : 'password'}
                               leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
+                              rightIcons={
+                                 <button type='button' onClick={togglePasswordVisibility}>
+                                    {showPassword ? (
+                                       <EyeIcon size={20} color='#bcc1c5' />
+                                    ) : (
+                                       <EyeOffIcon size={20} color='#bcc1c5' />
+                                    )}
+                                 </button>
+                              }
                            />
                         </FormControl>
                         <FormMessage />

@@ -11,7 +11,8 @@ import {
 } from '@/components/ui/form'
 import type { RegisterType } from '@/types/auth.type'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { EyeOffIcon, MailIcon, ShieldIcon, UserIcon } from 'lucide-react'
+import { EyeIcon, EyeOffIcon, MailIcon, ShieldIcon, UserIcon } from 'lucide-react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -33,6 +34,9 @@ const registerSchema = z
 type RegisterFormType = RegisterType & { repassword: string }
 
 export default function Register() {
+   const [showPassword, setShowPassword] = useState(false)
+   const [showRePassword, setShowRePassword] = useState(false)
+
    const form = useForm<RegisterFormType>({
       resolver: zodResolver(registerSchema),
       defaultValues: {
@@ -48,6 +52,9 @@ export default function Register() {
       const { repassword, ...registerData } = data
       console.log('Thông tin đăng ký:', registerData)
    }
+
+   const togglePasswordVisibility = () => setShowPassword(!showPassword)
+   const toggleRePasswordVisibility = () => setShowRePassword(!showRePassword)
 
    return (
       <div className='w-full'>
@@ -99,11 +106,15 @@ export default function Register() {
                            <FormInput
                               {...field}
                               placeholder='Mật khẩu'
-                              type='password'
+                              type={showPassword ? 'text' : 'password'}
                               leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
                               rightIcons={
-                                 <button type='button'>
-                                    <EyeOffIcon size={20} color='#bcc1c5' />
+                                 <button type='button' onClick={togglePasswordVisibility}>
+                                    {showPassword ? (
+                                       <EyeIcon size={20} color='#bcc1c5' />
+                                    ) : (
+                                       <EyeOffIcon size={20} color='#bcc1c5' />
+                                    )}
                                  </button>
                               }
                            />
@@ -124,11 +135,15 @@ export default function Register() {
                            <FormInput
                               {...field}
                               placeholder='Nhập lại mật khẩu'
-                              type='password'
+                              type={showRePassword ? 'text' : 'password'}
                               leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
                               rightIcons={
-                                 <button type='button'>
-                                    <EyeOffIcon size={20} color='#bcc1c5' />
+                                 <button type='button' onClick={toggleRePasswordVisibility}>
+                                    {showRePassword ? (
+                                       <EyeIcon size={20} color='#bcc1c5' />
+                                    ) : (
+                                       <EyeOffIcon size={20} color='#bcc1c5' />
+                                    )}
                                  </button>
                               }
                            />

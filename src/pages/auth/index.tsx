@@ -1,11 +1,21 @@
 import Button from '@/components/button/Button'
-import { Outlet } from 'react-router-dom'
+import { GoogleIcon } from '@/components/icon'
+import { FacebookIcon, LinkedinIcon } from 'lucide-react'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 export default function Auth() {
+   const location = useLocation()
+   const currentPath = location.pathname.split('/').pop()
+   const isRegister = currentPath === 'register'
+
    return (
-      <div className='flex h-screen w-full justify-center items-center'>
+      <div className='flex h-screen w-full items-center justify-center'>
          <div className='w-[600px] space-y-1.5'>
-            <h2 className='w-full text-[21px] text-[#00b14f]'>Chào mừng bạn đã quay trở lại</h2>
+            <h2 className='w-full text-[21px] text-[#00b14f]'>
+               {isRegister
+                  ? 'Chào mừng bạn đến với Dev Hiring Portal'
+                  : 'Chào mừng bạn quay trở lại'}
+            </h2>
             <div className='text-sm text-gray-600'>
                Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý tưởng
             </div>
@@ -16,20 +26,39 @@ export default function Auth() {
                Hoặc đăng nhập bằng
             </div>
             <div className='flex gap-x-3'>
-               <Button variant='primary' className='flex-1 !py-2.5'>
+               <Button variant='primary' className='flex-1 !bg-[#e73b2f] py-2.5'>
+                  <div className='h-[16px] w-[16px] fill-white'>
+                     <GoogleIcon />
+                  </div>
                   Google
                </Button>
-               <Button variant='primary' className='flex-1 !py-2.5'>
+               <Button variant='primary' className='flex-1 !bg-[#1877f2] py-2.5'>
+                  <FacebookIcon fill='white' size={16} />
                   Facebook
                </Button>
-               <Button variant='primary' className='flex-1 !py-2.5'>
+               <Button variant='primary' className='flex-1 !bg-[#0a66c2] py-2.5'>
+                  <LinkedinIcon fill='white' size={16} />
                   Linkedin
                </Button>
             </div>
             <div className='w-full py-2 text-center text-sm'>
-               Bạn chưa có tài khoản? <a className='font-normal text-[#00b14f]'>Đăng kí ngay</a>
+               {isRegister ? (
+                  <>
+                     Bạn đã có tài khoản?{' '}
+                     <Link to={'/auth/login'} className='font-normal text-[#00b14f]'>
+                        Đăng nhập ngay
+                     </Link>
+                  </>
+               ) : (
+                  <>
+                     Bạn chưa có tài khoản?{' '}
+                     <Link to={'/auth/register'} className='font-normal text-[#00b14f]'>
+                        Đăng kí ngay
+                     </Link>
+                  </>
+               )}
             </div>
-         </div>   
+         </div>
       </div>
    )
 }
