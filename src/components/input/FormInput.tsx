@@ -17,7 +17,7 @@ export function FormInput({
    rightIcons
 }: FormInputProps) {
    return (
-      <InputGroup className='!h-auto py-0.5'>
+      <InputGroup className='!h-auto rounded-none py-0.5 pr-2 !border-gray-250'>
          <Label>{label}</Label>
          <InputGroupInput className='!px-5' type={type} placeholder={placeholder} />
          {leftIcon && <InputGroupAddon>{leftIcon}</InputGroupAddon>}
