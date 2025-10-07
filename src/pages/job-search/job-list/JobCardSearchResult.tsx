@@ -8,7 +8,7 @@ type JobCardSearchResultProps = {
 
 export default function JobCardSearchResult({ job }: JobCardSearchResultProps) {
    return (
-      <div className='group relative mb-3 grid h-[171px] w-full grid-cols-[120px_1fr_135px] gap-x-3 rounded-lg border border-white bg-white p-3 hover:border-[#00b14f]'>
+      <div className='group hover:border-primary-green relative mb-3 grid h-[171px] w-full grid-cols-[120px_1fr_135px] gap-x-3 rounded-lg border border-white bg-white p-3'>
          <div className='col-start-1 h-[120px] w-[120px] rounded-lg border p-1'>
             <img
                src={job.avatar}
@@ -32,7 +32,7 @@ export default function JobCardSearchResult({ job }: JobCardSearchResultProps) {
                </Button>
             </div>
          </div>
-         <div className='col-start-3 row-start-1 flex justify-end text-[14px] font-bold text-[#00b14f]'>
+         <div className='text-primary-green col-start-3 row-start-1 flex justify-end text-[14px] font-bold'>
             {job.salary}
          </div>
          <div className='col-span-2 col-start-2 flex justify-end'>
@@ -54,7 +54,7 @@ export default function JobCardSearchResult({ job }: JobCardSearchResultProps) {
             </div>
          </div>
 
-         <button className='absolute top-1/2 right-3 hidden -translate-y-1/2 items-center gap-x-2 rounded-full bg-green-100 px-3 py-1.5 text-[14px] font-semibold text-[#00b14f] group-hover:flex'>
+         <button className='text-primary-green absolute top-1/2 right-3 hidden -translate-y-1/2 items-center gap-x-2 rounded-full bg-green-100 px-3 py-1.5 text-[14px] font-semibold group-hover:flex'>
             <div>Xem nhanh</div>
             <ChevronsRightIcon size={16} />
          </button>

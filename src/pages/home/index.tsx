@@ -13,7 +13,9 @@ export default function Home() {
                {/*  Recommend Title  */}
                <div className='my-1 flex items-center justify-between'>
                   <div className='flex items-center gap-x-3'>
-                     <div className='!text-[24px] font-bold text-[#00b14f]'>Việc làm tốt nhất</div>
+                     <div className='text-primary-green !text-[24px] font-bold'>
+                        Việc làm tốt nhất
+                     </div>
                      <div className='h-[1.5rem] w-[1px] bg-gray-300'></div>
                      <img
                         src='https://cdn-new.topcv.vn/unsafe/https://static.topcv.vn/v4/image/welcome/feature-job/label-toppy-ai.png'
@@ -24,10 +26,10 @@ export default function Home() {
                   <div className='flex items-center'>
                      <div className='px-3 text-sm underline'>Xem tất cả</div>
                      <div className='flex items-center gap-x-2'>
-                        <span className='rounded-full border border-[#00b14f] p-1 text-[#00b14f]'>
+                        <span className='border-primary-green text-primary-green rounded-full border p-1'>
                            <ChevronLeft />
                         </span>
-                        <span className='rounded-full border border-[#00b14f] p-1 text-[#00b14f]'>
+                        <span className='border-primary-green text-primary-green rounded-full border p-1'>
                            <ChevronRight />
                         </span>
                      </div>

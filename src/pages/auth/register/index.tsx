@@ -71,7 +71,9 @@ export default function Register() {
                               {...field}
                               placeholder='Nhập họ và tên'
                               type='text'
-                              leftIcon={<FilledIcons icon={UserIcon} fill='#00b14f' size={20} />}
+                              leftIcon={
+                                 <FilledIcons icon={UserIcon} fillColor='primary' size={20} />
+                              }
                            />
                         </FormControl>
                         <FormMessage />
@@ -89,7 +91,9 @@ export default function Register() {
                               {...field}
                               placeholder='Nhập email'
                               type='email'
-                              leftIcon={<FilledIcons icon={MailIcon} fill='#00b14f' size={20} />}
+                              leftIcon={
+                                 <FilledIcons icon={MailIcon} fillColor='primary' size={20} />
+                              }
                            />
                         </FormControl>
                         <FormMessage />
@@ -107,7 +111,9 @@ export default function Register() {
                               {...field}
                               placeholder='Mật khẩu'
                               type={showPassword ? 'text' : 'password'}
-                              leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
+                              leftIcon={
+                                 <FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />
+                              }
                               rightIcons={
                                  <button type='button' onClick={togglePasswordVisibility}>
                                     {showPassword ? (
@@ -136,7 +142,9 @@ export default function Register() {
                               {...field}
                               placeholder='Nhập lại mật khẩu'
                               type={showRePassword ? 'text' : 'password'}
-                              leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
+                              leftIcon={
+                                 <FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />
+                              }
                               rightIcons={
                                  <button type='button' onClick={toggleRePasswordVisibility}>
                                     {showRePassword ? (
@@ -153,7 +161,7 @@ export default function Register() {
                   )}
                />
 
-               <Button variant='primary' className='w-full !rounded bg-[#00b14f] !py-2.5'>
+               <Button variant='primary' className='w-full !rounded !py-2.5'>
                   Đăng ký
                </Button>
             </form>

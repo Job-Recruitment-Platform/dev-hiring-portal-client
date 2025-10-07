@@ -23,7 +23,7 @@ export default function Banner() {
 
    return (
       <section className='flex w-full flex-col items-center justify-center gap-y-3 bg-[linear-gradient(180deg,#002b33,rgba(0,43,51,0.25)),linear-gradient(90deg,#008060_21.86%,#2bab60_78.13%)] py-5'>
-         <div className='text-[1.8rem] font-bold text-[#00b14f]'>
+         <div className='text-primary-green text-[1.8rem] font-bold'>
             Tìm việc làm nhanh 24h, việc làm mới nhất trên toàn quốc
          </div>
          <div className='text-white'>

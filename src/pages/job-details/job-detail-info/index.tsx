@@ -10,11 +10,11 @@ export default function JobDetailInfo({ jobDescription }: JobDetailInfoProps) {
    return (
       <div className='w-full space-y-4 rounded-lg bg-white px-6 py-5'>
          <div className='flex items-center justify-between'>
-            <div className='border-l-7 border-[#00b14f] pl-3 text-[20px] font-bold text-black/80'>
+            <div className='border-primary-green border-l-7 pl-3 text-[20px] font-bold text-black/80'>
                Chi tiết tuyển dụng
             </div>
             <Button variant='outline'>
-               <BellIcon size={16} strokeWidth={2} color='#00b14f' />
+               <BellIcon size={16} strokeWidth={2} className='text-primary-green' />
                <div>Gửi tôi việc làm tương tự</div>
             </Button>
          </div>
@@ -40,12 +40,12 @@ export default function JobDetailInfo({ jobDescription }: JobDetailInfoProps) {
          </div>
          <div className='flex items-baseline rounded bg-gray-100 p-2 text-[14px] text-gray-900'>
             <span className='mr-1.5'>
-               <InfoIcon size={14} color='white' fill='#00b14f' />
+               <InfoIcon size={14} color='white' className='fill-primary-green' />
             </span>
             <span>
                Báo cáo tin tuyển dụng: Nếu bạn thấy rằng tin tuyển dụng này không đúng hoặc có dấu
                hiệu lừa <br /> đảo,{' '}
-               <a className='font-normal text-[#00b14f]'>hãy phản ánh với chúng tôi.</a>
+               <a className='text-primary-green font-normal'>hãy phản ánh với chúng tôi.</a>
             </span>
          </div>
       </div>

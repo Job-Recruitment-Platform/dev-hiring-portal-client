@@ -20,7 +20,7 @@ export default function JobInfo({ jobInfo }: JobInfoProps) {
          {/*  Job Title  */}
          <div className='flex w-full items-baseline gap-x-2 text-[20px] font-bold text-black/80'>
             <div>{jobInfo.title}</div>
-            <div className='flex h-4 w-4 items-center justify-center rounded-full bg-[#00b14f]'>
+            <div className='bg-primary-green flex h-4 w-4 items-center justify-center rounded-full'>
                <CheckIcon size={12} color='white' className='font-bold' />
             </div>
          </div>
@@ -63,7 +63,7 @@ export default function JobInfo({ jobInfo }: JobInfoProps) {
                <div>Ứng tuyển ngay</div>
             </Button>
             <Button variant='outline' className='!px-7'>
-               <HeartIcon size={16} strokeWidth={2.5} color='#00b14f' />
+               <HeartIcon size={16} strokeWidth={2.5} className='text-primary-green' />
                <div>Lưu tin</div>
             </Button>
          </div>

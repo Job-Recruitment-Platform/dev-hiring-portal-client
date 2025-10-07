@@ -150,6 +150,9 @@
    .border-primary-green {
       border-color: var(--color-primary-green);
    }
+   .fill-primary-green {
+      fill: var(--color-primary-green);
+   }
 
    .text-google-red {
       color: var(--color-google-red);

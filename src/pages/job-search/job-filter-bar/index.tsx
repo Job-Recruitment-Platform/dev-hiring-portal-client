@@ -7,7 +7,7 @@ export default function JobFilterBar() {
    return (
       <div className='w-full'>
          <div className='flex w-full items-center gap-x-2'>
-            <FilterIcon size={17} className='fill-[#00b14f] text-[#00b14f]' />
+            <FilterIcon size={17} className='fill-primary-green text-primary-green' />
             <span className='py-2 text-lg font-bold text-black/70'>Lọc nâng cao</span>
          </div>
          <div className='max-h-[2/3vh]'>

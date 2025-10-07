@@ -16,7 +16,7 @@ export default function SelectionBox({ className, options, defaultOption }: Sele
       <Popover>
          <PopoverTrigger asChild>
             <button
-               className={`flex items-center justify-between border-white bg-white px-3 py-1.5 hover:border-[#00b14f] ${className}`}
+               className={`hover:border-primary-green flex items-center justify-between border-white bg-white px-3 py-1.5 ${className}`}
             >
                <div className='ml-2 font-semibold'>{selectedOption?.label}</div>
                <ChevronDownIcon size={16} />
@@ -30,12 +30,12 @@ export default function SelectionBox({ className, options, defaultOption }: Sele
                   onClick={() => setSelectedOption(option)}
                >
                   <div
-                     className={`${selectedOption?.value === option.value && 'text-[14px] font-semibold text-[#00b14f]'}`}
+                     className={`${selectedOption?.value === option.value && 'text-primary-green text-[14px] font-semibold'}`}
                   >
                      {option.label}
                   </div>
                   {selectedOption?.value === option.value && (
-                     <CheckIcon size={16} className='text-[#00b14f]' />
+                     <CheckIcon size={16} className='text-primary-green' />
                   )}
                </div>
             ))}

@@ -35,11 +35,11 @@ export default function BasicFilterOption({
                         value={option.value}
                         id={`radio-${option.value}`}
                         className={clsx(
-                           'hover:border-[] h-4.5 w-4.5 border-2 border-gray-400/80 group-hover:border-[#00b14f]',
-                           'data-[state=checked]:border-[#00b14f] data-[state=unchecked]:text-[#00b14f]'
+                           'hover:border-[] group-hover:border-primary-green h-4.5 w-4.5 border-2 border-gray-400/80',
+                           'data-[state=checked]:border-primary-green data-[state=unchecked]:text-primary-green'
                         )}
                      />
-                     <div className='text-[13px] font-semibold text-gray-500 group-hover:text-[#00b14f]'>
+                     <div className='group-hover:text-primary-green text-[13px] font-semibold text-gray-500'>
                         {option.label}
                      </div>
                   </div>

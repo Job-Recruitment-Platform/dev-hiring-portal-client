@@ -47,7 +47,7 @@ export default function JobCompanyInfo({ companyInfo }: JobCompanyInfoProps) {
                href='#'
                target='_blank'
                rel='noopener noreferrer'
-               className='inline-flex items-center gap-2 text-[14.5px] font-semibold text-[#00b14f] hover:underline'
+               className='text-primary-green inline-flex items-center gap-2 text-[14.5px] font-semibold hover:underline'
             >
                Xem trang công ty
                <ExternalLink size={16} />

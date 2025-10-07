@@ -53,7 +53,9 @@ export default function Login() {
                               {...field}
                               placeholder='Email'
                               type='email'
-                              leftIcon={<FilledIcons icon={MailIcon} fill='#00b14f' size={20} />}
+                              leftIcon={
+                                 <FilledIcons icon={MailIcon} fillColor='primary' size={20} />
+                              }
                            />
                         </FormControl>
                         <FormMessage />
@@ -71,7 +73,9 @@ export default function Login() {
                               {...field}
                               placeholder='Mật khẩu'
                               type={showPassword ? 'text' : 'password'}
-                              leftIcon={<FilledIcons icon={ShieldIcon} fill='#00b14f' size={20} />}
+                              leftIcon={
+                                 <FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />
+                              }
                               rightIcons={
                                  <button type='button' onClick={togglePasswordVisibility}>
                                     {showPassword ? (
@@ -87,10 +91,10 @@ export default function Login() {
                      </FormItem>
                   )}
                />
-               <div className='w-full text-end text-[14px] font-normal text-[#00b14f]'>
+               <div className='text-primary-green w-full text-end text-[14px] font-normal'>
                   Quên mật khẩu
                </div>
-               <Button variant='primary' className='w-full !rounded bg-[#00b14f] !py-2.5'>
+               <Button variant='primary' className='w-full !rounded !py-2.5'>
                   Đăng nhập
                </Button>
             </form>

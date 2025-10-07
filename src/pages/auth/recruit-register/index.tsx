@@ -222,7 +222,7 @@ export default function RecruitRegister() {
                   />
                </div>
 
-               <Button variant='primary' className='w-full !rounded bg-[#00b14f] !py-2.5'>
+               <Button variant='primary' className='w-full !rounded !py-2.5'>
                   Đăng ký
                </Button>
             </form>

@@ -12,7 +12,7 @@ export default function BannerCategory({ onSelect, categories }: BannerCategoryP
          {categories.map((major) => (
             <div
                key={major.id}
-               className='flex cursor-pointer py-2 text-sm font-semibold hover:text-[#00b14f]'
+               className='hover:text-primary-green flex cursor-pointer py-2 text-sm font-semibold'
                onMouseEnter={() => onSelect(major.id)}
             >
                <div className='flex-1'>{major.name}</div>

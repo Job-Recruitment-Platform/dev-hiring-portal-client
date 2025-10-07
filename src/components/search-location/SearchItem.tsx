@@ -15,17 +15,19 @@ export default function SearchItem({ type, name }: SearchItemProps) {
             'hover:cursor-pointer hover:bg-gray-100'
          )}
       >
-         <div className='flex items-center gap-x-3 text-[14px] font-semibold text-black/80 group-hover:text-[#00b14f]'>
+         <div className='group-hover:text-primary-green flex items-center gap-x-3 text-[14px] font-semibold text-black/80'>
             <Checkbox
                className={clsx(
                   'h-[20px] w-[20px] rounded border-[2px] border-gray-300',
-                  'data-[state=checked]:border-[#00b14f] data-[state=checked]:bg-[#00b14f]',
-                  'group-hover:border-[#00b14f]'
+                  'data-[state=checked]:border-primary-green data-[state=checked]:bg-primary-green',
+                  'group-hover:border-primary-green'
                )}
             />
             {name}
          </div>
-         {type === 'province' && <ChevronRight size={16} className='group-hover:text-[#00b14f]' />}
+         {type === 'province' && (
+            <ChevronRight size={16} className='group-hover:text-primary-green' />
+         )}
       </div>
    )
 }

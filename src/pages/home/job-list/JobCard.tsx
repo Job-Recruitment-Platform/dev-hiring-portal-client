@@ -8,12 +8,12 @@ type JobCardProps = {
 
 export default function JobCard({ job }: JobCardProps) {
    return (
-      <div className='grid w-full grid-cols-[64px_1fr] gap-x-2 gap-y-1 rounded-xl border border-white bg-white p-3 hover:border-[#00b14f]'>
+      <div className='hover:border-primary-green grid w-full grid-cols-[64px_1fr] gap-x-2 gap-y-1 rounded-xl border border-white bg-white p-3'>
          <div className='col-span-1 h-[64px] w-[64px] rounded-lg border p-1'>
             <img src={job.avatar} alt={job.company} className='h-full w-full object-cover' />
          </div>
          <div className='col-span-1'>
-            <div className='mb-0.5 line-clamp-2 text-[14px] leading-[20px] font-semibold text-black/85 hover:text-[#00b14f]'>
+            <div className='hover:text-primary-green mb-0.5 line-clamp-2 text-[14px] leading-[20px] font-semibold text-black/85'>
                {job.title}
             </div>
             <div className='line-clamp-1 text-[12px] text-[#6f7882]'>{job.company}</div>
@@ -28,7 +28,7 @@ export default function JobCard({ job }: JobCardProps) {
                </Button>
             </div>
             <Button variant='secondary' className='!rounded-full !p-2'>
-               <Heart size={16} className='fill-white text-[#00b14f]' />
+               <Heart size={16} className='text-primary-green fill-white' />
             </Button>
          </div>
       </div>

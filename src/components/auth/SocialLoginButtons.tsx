@@ -9,17 +9,17 @@ export const SocialLoginButtons = () => {
             Hoặc đăng nhập bằng
          </div>
          <div className='flex gap-x-3'>
-            <Button variant='primary' className='flex-1 !bg-[#e73b2f] py-2.5'>
+            <Button variant='primary' className='!bg-google-red flex-1 py-2.5'>
                <div className='h-[16px] w-[16px] fill-white'>
                   <GoogleIcon />
                </div>
                Google
             </Button>
-            <Button variant='primary' className='flex-1 !bg-[#1877f2] py-2.5'>
+            <Button variant='primary' className='!bg-facebook-blue flex-1 py-2.5'>
                <FacebookIcon fill='white' size={16} />
                Facebook
             </Button>
-            <Button variant='primary' className='flex-1 !bg-[#0a66c2] py-2.5'>
+            <Button variant='primary' className='!bg-linkedin-blue flex-1 py-2.5'>
                <LinkedinIcon fill='white' size={16} />
                Linkedin
             </Button>

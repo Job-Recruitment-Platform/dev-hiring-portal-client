@@ -1,10 +1,10 @@
 import clsx from 'clsx'
 
 const variantStyles = {
-   primary: 'bg-[#00b14f] text-white hover:brightness-105',
-   secondary: 'bg-white border border-[#00b14f] text-[#00b14f]',
+   primary: 'bg-primary-green text-white hover:brightness-105',
+   secondary: 'bg-white border border-primary-green text-primary-green',
    ghost: 'bg-gray-200/60 hover:bg-gray-300/70',
-   outline: 'bg-white border border-[#00b14f] text-[#00b14f]'
+   outline: 'bg-white border border-primary-green text-primary-green'
 }
 
 type ButtonProps = {
