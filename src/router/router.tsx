@@ -1,8 +1,9 @@
 import BaseLayout from '@/layouts/BaseLayout'
 import SearchLayout from '@/layouts/SearchLayout'
 import Auth from '@/pages/auth'
-import Login from '@/pages/auth/auth/login'
-import Register from '@/pages/auth/auth/register'
+import Login from '@/pages/auth/login'
+import RecruitRegister from '@/pages/auth/recruit-register'
+import Register from '@/pages/auth/register'
 import Home from '@/pages/home'
 import JobDetailPage from '@/pages/job-details'
 import JobSearch from '@/pages/job-search'
@@ -58,9 +59,15 @@ const router = createBrowserRouter([
             path: 'register',
             index: true,
             element: <Register />
+         },
+         {
+            path: 'recruit-register',
+            index: true,
+            element: <RecruitRegister />
          }
       ]
-   }
+   },
+   {}
 ])
 
 export default router

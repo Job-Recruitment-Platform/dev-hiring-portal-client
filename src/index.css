@@ -9,6 +9,17 @@
    --radius-lg: var(--radius);
    --radius-xl: calc(var(--radius) + 4px);
    --font-size-sm: 14px;
+
+   /* Custom App Colors */
+   --color-primary-green: #00b14f;
+   --color-google-red: #e73b2f;
+   --color-facebook-blue: #1877f2;
+   --color-linkedin-blue: #0a66c2;
+   --color-gray-light: #bcc1c5;
+   --color-gray-medium: #6b7280;
+   --color-gray-dark: #374151;
+   --color-gray-border: #e5e7eb;
+
    --color-background: var(--background);
    --color-foreground: var(--foreground);
    --color-card: var(--card);
@@ -125,5 +136,53 @@
 
    h2 {
       @apply text-[20px] font-semibold;
+   }
+}
+
+@layer utilities {
+   /* Custom color utilities */
+   .text-primary-green {
+      color: var(--color-primary-green);
+   }
+   .bg-primary-green {
+      background-color: var(--color-primary-green);
+   }
+   .border-primary-green {
+      border-color: var(--color-primary-green);
+   }
+
+   .text-google-red {
+      color: var(--color-google-red);
+   }
+   .bg-google-red {
+      background-color: var(--color-google-red);
+   }
+
+   .text-facebook-blue {
+      color: var(--color-facebook-blue);
+   }
+   .bg-facebook-blue {
+      background-color: var(--color-facebook-blue);
+   }
+
+   .text-linkedin-blue {
+      color: var(--color-linkedin-blue);
+   }
+   .bg-linkedin-blue {
+      background-color: var(--color-linkedin-blue);
+   }
+
+   .text-gray-light {
+      color: var(--color-gray-light);
+   }
+   .text-gray-medium {
+      color: var(--color-gray-medium);
+   }
+   .text-gray-dark {
+      color: var(--color-gray-dark);
+   }
+
+   .border-gray-custom {
+      border-color: var(--color-gray-border);
    }
 }

@@ -1,5 +1,6 @@
 import Button from '@/components/button/Button'
 import { GoogleIcon } from '@/components/icon'
+import clsx from 'clsx'
 import { FacebookIcon, LinkedinIcon } from 'lucide-react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
@@ -10,7 +11,11 @@ export default function Auth() {
 
    return (
       <div className='flex h-screen w-full items-center justify-center'>
-         <div className='w-[600px] space-y-1.5'>
+         <div
+            className={clsx('w-[630px] space-y-1.5 rounded-md border p-10', {
+               'w-[800px]': currentPath !== 'login' && currentPath !== 'register'
+            })}
+         >
             <h2 className='w-full text-[21px] text-[#00b14f]'>
                {isRegister
                   ? 'Chào mừng bạn đến với Dev Hiring Portal'

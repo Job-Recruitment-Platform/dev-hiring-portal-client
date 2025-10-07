@@ -12,15 +12,27 @@ type FormInputProps = {
    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
    name?: string
+   className?: string
 }
 
 export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
    (
-      { label, placeholder, type = 'text', leftIcon, rightIcons, value, onChange, onBlur, name },
+      {
+         label,
+         placeholder,
+         type = 'text',
+         leftIcon,
+         rightIcons,
+         value,
+         onChange,
+         onBlur,
+         className,
+         name
+      },
       ref
    ) => {
       return (
-         <InputGroup className='!border-gray-250 !h-auto rounded-none py-0.5 pr-2'>
+         <InputGroup className={`!border-gray-250 !h-auto rounded-none py-0.5 pr-2 ${className}`}>
             <Label>{label}</Label>
             <InputGroupInput
                ref={ref}
