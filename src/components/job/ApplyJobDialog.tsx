@@ -80,6 +80,7 @@ export default function ApplyJobDialog({ jobTitle, children }: ApplyJobDialogPro
    const uploadMethod = form.watch('uploadMethod')
    const coverLetter = form.watch('coverLetter')
 
+   // Mock data - thay thế bằng data thật từ API
    const cvList: CVOption[] = [
       { id: 'cv-1', name: 'CV_NguyenAnhKha' },
       { id: 'cv-2', name: 'dsd' },
@@ -133,7 +134,7 @@ export default function ApplyJobDialog({ jobTitle, children }: ApplyJobDialogPro
    return (
       <Dialog open={open} onOpenChange={setOpen}>
          <DialogTrigger asChild>{children}</DialogTrigger>
-         <DialogContent className='max-h-[95vh] min-w-[700px] overflow-y-auto'>
+         <DialogContent className='max-h-[95vh] w-[33vw] min-w-[500px] overflow-y-auto'>
             <DialogHeader>
                <DialogTitle className='text-xl'>
                   Ứng tuyển <span className='text-primary-green'>{jobTitle}</span>
@@ -377,6 +378,7 @@ export default function ApplyJobDialog({ jobTitle, children }: ApplyJobDialogPro
                         onClick={() => {
                            setOpen(false)
                            form.reset()
+                           setUploadedFile(null)
                         }}
                      >
                         Hủy
