@@ -15,7 +15,7 @@ export default function JobDetailPage() {
    }
 
    return (
-      <div className='flex w-full justify-center bg-[#f4f5f5]'>
+      <div className='flex w-full pt-6 justify-center bg-[#f4f5f5]'>
          <div className='grid w-[1140px] grid-cols-3 gap-x-6'>
             <div className='col-span-2 space-y-6'>
                <JobInfo jobInfo={jobDetail.jobInfo} />

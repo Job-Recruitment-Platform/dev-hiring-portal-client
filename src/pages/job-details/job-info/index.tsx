@@ -1,4 +1,5 @@
 import Button from '@/components/button/Button'
+import ApplyJobDialog from '@/pages/job-details/job-info/ApplyJobDialog'
 import BasicInfoBox from '@/pages/job-details/job-info/BasicInfoBox'
 import type { JobBasicInfoType } from '@/types/job.type'
 import {
@@ -57,11 +58,13 @@ export default function JobInfo({ jobInfo }: JobInfoProps) {
             <div>Hạn nộp hồ sơ: {jobInfo.deadline.toLocaleDateString('en-GB')}</div>
          </div>
          {/*  Apply Button  */}
-         <div className='flex items-center gap-x-2'>
-            <Button variant='primary' className='flex-1'>
-               <SendIcon size={16} strokeWidth={2.5} color='white' />
-               <div>Ứng tuyển ngay</div>
-            </Button>
+         <div className='flex items-stretch gap-x-2'>
+            <ApplyJobDialog jobTitle={jobInfo.title}>
+               <Button variant='primary' className='flex-1 py-2'>
+                  <SendIcon size={16} strokeWidth={2.5} color='white' />
+                  <div>Ứng tuyển ngay</div>
+               </Button>
+            </ApplyJobDialog>
             <Button variant='outline' className='!px-7'>
                <HeartIcon size={16} strokeWidth={2.5} className='text-primary-green' />
                <div>Lưu tin</div>

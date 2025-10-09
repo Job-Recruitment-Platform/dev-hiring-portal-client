@@ -13,6 +13,7 @@ type ButtonProps = {
    className?: string
    disabled?: boolean
    variant?: 'primary' | 'ghost' | 'secondary' | 'outline'
+   type?: 'button' | 'submit' | 'reset'
 }
 
 export default function Button({
@@ -20,10 +21,12 @@ export default function Button({
    onClick,
    className,
    variant = 'primary',
-   disabled
+   disabled,
+   type = 'button'
 }: ButtonProps) {
    return (
       <button
+         type={type}
          className={clsx(
             `flex items-center justify-center gap-x-2 rounded px-3 py-1.5 text-[14px] font-medium hover:cursor-pointer`,
             `${className}`,
