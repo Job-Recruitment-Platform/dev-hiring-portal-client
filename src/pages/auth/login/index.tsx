@@ -1,7 +1,7 @@
 import AuthFormWrapper from '@/components/auth/AuthFormWrapper'
-import AuthSubmitButton from '@/components/auth/AuthSubmitButton'
 import EmailFormField from '@/components/auth/EmailFormField'
 import PasswordFormField from '@/components/auth/PasswordFormField'
+import AuthSubmitButton from '@/components/button/AuthSubmitButton'
 import { PrimaryLink } from '@/components/common'
 import type { LoginType } from '@/types/auth.type'
 import { zodResolver } from '@hookform/resolvers/zod'
