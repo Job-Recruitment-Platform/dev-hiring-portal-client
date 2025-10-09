@@ -1,6 +1,5 @@
 import FilledIcons from '@/components/filled-icon'
 import { FormInput } from '@/components/input/FormInput'
-import { COLORS } from '@/constants/theme'
 import { usePasswordVisibility } from '@/hooks/usePasswordVisibility'
 import { EyeIcon, EyeOffIcon, ShieldIcon } from 'lucide-react'
 
@@ -20,13 +19,13 @@ export const PasswordInput = ({ placeholder, ...props }: PasswordInputProps) => 
          {...props}
          type={show ? 'text' : 'password'}
          placeholder={placeholder}
-         leftIcon={<FilledIcons icon={ShieldIcon} fill={COLORS.primary} size={20} />}
+         leftIcon={<FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />}
          rightIcons={
             <button type='button' onClick={toggle}>
                {show ? (
-                  <EyeIcon size={20} color={COLORS.gray.light} />
+                  <EyeIcon size={20} color='#bcc1c5' />
                ) : (
-                  <EyeOffIcon size={20} color={COLORS.gray.light} />
+                  <EyeOffIcon size={20} color='#bcc1c5' />
                )}
             </button>
          }

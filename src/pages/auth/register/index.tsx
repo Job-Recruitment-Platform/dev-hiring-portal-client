@@ -1,18 +1,10 @@
-import Button from '@/components/button/Button'
-import FilledIcons from '@/components/filled-icon'
-import { FormInput } from '@/components/input/FormInput'
-import {
-   Form,
-   FormControl,
-   FormField,
-   FormItem,
-   FormLabel,
-   FormMessage
-} from '@/components/ui/form'
+import AuthFormWrapper from '@/components/auth/AuthFormWrapper'
+import AuthSubmitButton from '@/components/auth/AuthSubmitButton'
+import EmailFormField from '@/components/auth/EmailFormField'
+import FullNameFormField from '@/components/auth/FullNameFormField'
+import PasswordFormField from '@/components/auth/PasswordFormField'
 import type { RegisterType } from '@/types/auth.type'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { EyeIcon, EyeOffIcon, MailIcon, ShieldIcon, UserIcon } from 'lucide-react'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -34,9 +26,6 @@ const registerSchema = z
 type RegisterFormType = RegisterType & { repassword: string }
 
 export default function Register() {
-   const [showPassword, setShowPassword] = useState(false)
-   const [showRePassword, setShowRePassword] = useState(false)
-
    const form = useForm<RegisterFormType>({
       resolver: zodResolver(registerSchema),
       defaultValues: {
@@ -48,124 +37,33 @@ export default function Register() {
    })
 
    const onSubmit = (data: RegisterFormType) => {
-      // Loại bỏ repassword trước khi console.log
       const { repassword, ...registerData } = data
       console.log('Thông tin đăng ký:', registerData)
    }
 
-   const togglePasswordVisibility = () => setShowPassword(!showPassword)
-   const toggleRePasswordVisibility = () => setShowRePassword(!showRePassword)
-
    return (
-      <div className='w-full'>
-         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='flex w-full flex-col gap-y-4'>
-               <FormField
-                  control={form.control}
-                  name='fullName'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Họ và tên</FormLabel>
-                        <FormControl>
-                           <FormInput
-                              {...field}
-                              placeholder='Nhập họ và tên'
-                              type='text'
-                              leftIcon={
-                                 <FilledIcons icon={UserIcon} fillColor='primary' size={20} />
-                              }
-                           />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
-               <FormField
-                  control={form.control}
-                  name='email'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Email</FormLabel>
-                        <FormControl>
-                           <FormInput
-                              {...field}
-                              placeholder='Nhập email'
-                              type='email'
-                              leftIcon={
-                                 <FilledIcons icon={MailIcon} fillColor='primary' size={20} />
-                              }
-                           />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
-               <FormField
-                  control={form.control}
-                  name='password'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Mật khẩu</FormLabel>
-                        <FormControl>
-                           <FormInput
-                              {...field}
-                              placeholder='Mật khẩu'
-                              type={showPassword ? 'text' : 'password'}
-                              leftIcon={
-                                 <FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />
-                              }
-                              rightIcons={
-                                 <button type='button' onClick={togglePasswordVisibility}>
-                                    {showPassword ? (
-                                       <EyeIcon size={20} color='#bcc1c5' />
-                                    ) : (
-                                       <EyeOffIcon size={20} color='#bcc1c5' />
-                                    )}
-                                 </button>
-                              }
-                           />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
-               <FormField
-                  control={form.control}
-                  name='repassword'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>
-                           Xác nhận mật khẩu
-                        </FormLabel>
-                        <FormControl>
-                           <FormInput
-                              {...field}
-                              placeholder='Nhập lại mật khẩu'
-                              type={showRePassword ? 'text' : 'password'}
-                              leftIcon={
-                                 <FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />
-                              }
-                              rightIcons={
-                                 <button type='button' onClick={toggleRePasswordVisibility}>
-                                    {showRePassword ? (
-                                       <EyeIcon size={20} color='#bcc1c5' />
-                                    ) : (
-                                       <EyeOffIcon size={20} color='#bcc1c5' />
-                                    )}
-                                 </button>
-                              }
-                           />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
+      <AuthFormWrapper form={form} onSubmit={onSubmit}>
+         <FullNameFormField control={form.control} name='fullName' />
+         <EmailFormField
+            control={form.control}
+            name='email'
+            label='Email'
+            placeholder='Nhập email'
+         />
+         <PasswordFormField
+            control={form.control}
+            name='password'
+            label='Mật khẩu'
+            placeholder='Mật khẩu'
+         />
+         <PasswordFormField
+            control={form.control}
+            name='repassword'
+            label='Xác nhận mật khẩu'
+            placeholder='Nhập lại mật khẩu'
+         />
 
-               <Button variant='primary' className='w-full !rounded !py-2.5'>
-                  Đăng ký
-               </Button>
-            </form>
-         </Form>
-      </div>
+         <AuthSubmitButton>Đăng ký</AuthSubmitButton>
+      </AuthFormWrapper>
    )
 }

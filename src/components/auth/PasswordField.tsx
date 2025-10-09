@@ -1,7 +1,6 @@
 import FilledIcons from '@/components/filled-icon'
 import { FormInput } from '@/components/input/FormInput'
 import { FormControl, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { COLORS } from '@/constants/theme'
 import { usePasswordVisibility } from '@/hooks/usePasswordVisibility'
 import { EyeIcon, EyeOffIcon, ShieldIcon } from 'lucide-react'
 import { forwardRef } from 'react'
@@ -26,13 +25,13 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
                   name={name}
                   placeholder={placeholder}
                   type={show ? 'text' : 'password'}
-                  leftIcon={<FilledIcons icon={ShieldIcon} fill={COLORS.primary} size={20} />}
+                  leftIcon={<FilledIcons icon={ShieldIcon} fillColor='primary' size={20} />}
                   rightIcons={
                      <button type='button' onClick={toggle}>
                         {show ? (
-                           <EyeIcon size={20} color={COLORS.gray.light} />
+                           <EyeIcon size={20} color='#bcc1c5' />
                         ) : (
-                           <EyeOffIcon size={20} color={COLORS.gray.light} />
+                           <EyeOffIcon size={20} color='#bcc1c5' />
                         )}
                      </button>
                   }
