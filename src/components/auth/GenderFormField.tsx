@@ -1,24 +1,32 @@
-import FilledIcons from '@/components/filled-icon'
-import { FormInput } from '@/components/input/FormInput'
+import RadioInput from '@/components/input/RadioInput'
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { UserIcon } from 'lucide-react'
 import type { Control, FieldPath, FieldValues } from 'react-hook-form'
 
-type FullNameFormFieldProps<TFieldValues extends FieldValues> = {
+type GenderOption = {
+   label: string
+   value: string
+}
+
+type GenderFormFieldProps<TFieldValues extends FieldValues> = {
    control: Control<TFieldValues>
    name: FieldPath<TFieldValues>
    label?: string
-   placeholder?: string
+   options?: GenderOption[]
    className?: string
 }
 
-export default function FullNameFormField<TFieldValues extends FieldValues>({
+const defaultOptions: GenderOption[] = [
+   { label: 'Nam', value: 'male' },
+   { label: 'Nữ', value: 'female' }
+]
+
+export default function GenderFormField<TFieldValues extends FieldValues>({
    control,
    name,
-   label = 'Họ và tên',
-   placeholder = 'Nhập họ và tên',
+   label = 'Giới tính',
+   options = defaultOptions,
    className
-}: FullNameFormFieldProps<TFieldValues>) {
+}: GenderFormFieldProps<TFieldValues>) {
    return (
       <FormField
          control={control}
@@ -27,11 +35,11 @@ export default function FullNameFormField<TFieldValues extends FieldValues>({
             <FormItem className={className}>
                <FormLabel className='font-normal text-gray-800/90'>{label}</FormLabel>
                <FormControl>
-                  <FormInput
+                  <RadioInput
                      {...field}
-                     placeholder={placeholder}
-                     type='text'
-                     leftIcon={<FilledIcons icon={UserIcon} fillColor='primary' size={20} />}
+                     name={String(name)}
+                     options={options}
+                     orientation='horizontal'
                   />
                </FormControl>
                <FormMessage />

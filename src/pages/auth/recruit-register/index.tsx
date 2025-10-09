@@ -1,20 +1,14 @@
-import { PasswordInput } from '@/components/auth/PasswordInput'
+import AuthFormWrapper from '@/components/auth/AuthFormWrapper'
+import AuthSubmitButton from '@/components/auth/AuthSubmitButton'
+import CompanyFormField from '@/components/auth/CompanyFormField'
+import EmailFormField from '@/components/auth/EmailFormField'
+import FullNameFormField from '@/components/auth/FullNameFormField'
+import GenderFormField from '@/components/auth/GenderFormField'
+import PasswordFormField from '@/components/auth/PasswordFormField'
+import PhoneFormField from '@/components/auth/PhoneFormField'
 import Button from '@/components/button/Button'
-import FilledIcons from '@/components/filled-icon'
-import { FormInput } from '@/components/input/FormInput'
-import RadioInput from '@/components/input/RadioInput'
-import {
-   Form,
-   FormControl,
-   FormField,
-   FormItem,
-   FormLabel,
-   FormMessage
-} from '@/components/ui/form'
-import { COLORS } from '@/constants/theme'
 import { recruitRegisterSchema, type RecruitRegisterFormData } from '@/schemas/auth.schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Building2Icon, MailIcon, PhoneIcon, UserIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 
 export default function RecruitRegister() {
@@ -33,6 +27,7 @@ export default function RecruitRegister() {
    })
 
    const onSubmit = (data: RecruitRegisterFormData) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { repassword, ...submitData } = data
       console.log('Thông tin đăng ký:', submitData)
    }
@@ -50,183 +45,34 @@ export default function RecruitRegister() {
             Đăng ký
          </Button>
          <div>Hoặc bằng email</div>
-         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className='flex w-full flex-col gap-y-5'>
-               <FormField
-                  control={form.control}
-                  name='fullName'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Họ và tên</FormLabel>
-                        <FormControl>
-                           <FormInput
-                              {...field}
-                              placeholder='Họ và tên'
-                              type='text'
-                              leftIcon={
-                                 <FilledIcons icon={UserIcon} fill={COLORS.primary} size={20} />
-                              }
-                           />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
-               <FormField
-                  control={form.control}
-                  name='email'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Email</FormLabel>
-                        <FormControl>
-                           <FormInput
-                              {...field}
-                              placeholder='Nhập email'
-                              type='email'
-                              leftIcon={
-                                 <FilledIcons icon={MailIcon} fill={COLORS.primary} size={20} />
-                              }
-                           />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
-               <FormField
-                  control={form.control}
-                  name='password'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>Mật khẩu</FormLabel>
-                        <FormControl>
-                           <PasswordInput {...field} placeholder='Mật khẩu' />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
-               <FormField
-                  control={form.control}
-                  name='repassword'
-                  render={({ field }) => (
-                     <FormItem>
-                        <FormLabel className='font-normal text-gray-800/90'>
-                           Xác nhận mật khẩu
-                        </FormLabel>
-                        <FormControl>
-                           <PasswordInput {...field} placeholder='Nhập lại mật khẩu' />
-                        </FormControl>
-                        <FormMessage />
-                     </FormItem>
-                  )}
-               />
 
-               <div className='w-full space-y-5'>
-                  <div>Thông tin nhà tuyển dụng</div>
-                  <div className='flex items-stretch gap-x-3'>
-                     <FormField
-                        control={form.control}
-                        name='recruiterFullName'
-                        render={({ field }) => (
-                           <FormItem className='flex-2/3'>
-                              <FormLabel className='font-normal text-gray-800/90'>
-                                 Họ và tên
-                              </FormLabel>
-                              <FormControl>
-                                 <FormInput
-                                    {...field}
-                                    placeholder='Họ và tên'
-                                    type='text'
-                                    leftIcon={
-                                       <FilledIcons
-                                          icon={UserIcon}
-                                          fill={COLORS.primary}
-                                          size={20}
-                                       />
-                                    }
-                                 />
-                              </FormControl>
-                              <FormMessage />
-                           </FormItem>
-                        )}
-                     />
-                     <FormField
-                        control={form.control}
-                        name='gender'
-                        render={({ field }) => (
-                           <FormItem className='flex-1/3'>
-                              <FormLabel className='font-normal text-gray-800/90'>
-                                 Giới tính
-                              </FormLabel>
-                              <FormControl>
-                                 <RadioInput
-                                    {...field}
-                                    name='gender'
-                                    options={[
-                                       { label: 'Nam', value: 'male' },
-                                       { label: 'Nữ', value: 'female' }
-                                    ]}
-                                    orientation='horizontal'
-                                 />
-                              </FormControl>
-                              <FormMessage />
-                           </FormItem>
-                        )}
-                     />
-                  </div>
-                  <FormField
+         <AuthFormWrapper form={form} onSubmit={onSubmit} className='gap-y-5'>
+            <FullNameFormField control={form.control} name='fullName' />
+            <EmailFormField control={form.control} name='email' placeholder='Nhập email' />
+            <PasswordFormField control={form.control} name='password' />
+            <PasswordFormField
+               control={form.control}
+               name='repassword'
+               label='Xác nhận mật khẩu'
+               placeholder='Nhập lại mật khẩu'
+            />
+
+            <div className='w-full space-y-5'>
+               <div>Thông tin nhà tuyển dụng</div>
+               <div className='flex items-stretch gap-x-3'>
+                  <FullNameFormField
                      control={form.control}
-                     name='phone'
-                     render={({ field }) => (
-                        <FormItem>
-                           <FormLabel className='font-normal text-gray-800/90'>
-                              Số điện thoại cá nhân
-                           </FormLabel>
-                           <FormControl>
-                              <FormInput
-                                 {...field}
-                                 placeholder='Số điện thoại cá nhân'
-                                 type='text'
-                                 leftIcon={
-                                    <FilledIcons icon={PhoneIcon} fill={COLORS.primary} size={20} />
-                                 }
-                              />
-                           </FormControl>
-                           <FormMessage />
-                        </FormItem>
-                     )}
+                     name='recruiterFullName'
+                     className='flex-2/3'
                   />
-                  <FormField
-                     control={form.control}
-                     name='company'
-                     render={({ field }) => (
-                        <FormItem>
-                           <FormLabel className='font-normal text-gray-800/90'>Công ty</FormLabel>
-                           <FormControl>
-                              <FormInput
-                                 {...field}
-                                 placeholder='Công ty'
-                                 type='text'
-                                 leftIcon={
-                                    <FilledIcons
-                                       icon={Building2Icon}
-                                       fill={COLORS.primary}
-                                       size={20}
-                                    />
-                                 }
-                              />
-                           </FormControl>
-                           <FormMessage />
-                        </FormItem>
-                     )}
-                  />
+                  <GenderFormField control={form.control} name='gender' className='flex-1/3' />
                </div>
+               <PhoneFormField control={form.control} name='phone' />
+               <CompanyFormField control={form.control} name='company' />
+            </div>
 
-               <Button variant='primary' className='w-full !rounded !py-2.5'>
-                  Đăng ký
-               </Button>
-            </form>
-         </Form>
+            <AuthSubmitButton>Đăng ký</AuthSubmitButton>
+         </AuthFormWrapper>
       </div>
    )
 }
